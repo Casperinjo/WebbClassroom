@@ -1,0 +1,14 @@
+html{
+    height: 100vh;
+}
+body {
+    margin: 0;
+    background-color: black;
+
+}
+.class-item{
+    background-color: white;
+    display: flex;
+    
+
+}
