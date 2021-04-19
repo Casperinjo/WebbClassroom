@@ -1,4 +1,11 @@
 
+let approot = document.querySelector(".app-root");
+
+
+//Event listerners
+
+
+
 
 fetch("./classroom.json", {})
 .then((response) => {
@@ -6,19 +13,27 @@ fetch("./classroom.json", {})
 })
 .then((data) => {
     console.log(data);
-    data.forEach(subject => {
-        let subjectDiv = document.createElement("div");
-        subjectDiv.classList.add("class-item");
+    data.forEach((subject) => {
+        let subjectButton = document.createElement("button");
+        subjectButton.classList.add("class-button");
         let subjectName = document.createElement("h2");
         subjectName.innerText = subject.class;
-        subjectDiv.append(subjectName);
+        subjectButton.append(subjectName);
         let subjectIcon = document.createElement("img");
-        subjectIcon.setAttribute("src", "./img" + subject.icon)
-        subjectDiv.append(subjectIcon);
+        subjectIcon.setAttribute("src", "./img/" + subject.icon);
+        subjectButton.append(subjectIcon);
+        approot.append(subjectButton);
         
     });
-})
+});
 
+
+
+
+function buttonSlide(){
+    
+    approot.classList.toggle("slider");
+};
 
 
 
