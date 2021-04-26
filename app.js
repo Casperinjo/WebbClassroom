@@ -1,12 +1,13 @@
 
 let approot = document.querySelector(".app-root");
+let subject;
 
 
 //Event listerners
 
 
 
-
+/*
 fetch("./classroom.json", {})
 .then((response) => {
     return response.json();
@@ -26,9 +27,23 @@ fetch("./classroom.json", {})
         
     });
 });
+*/
+
+
+function addSubject() {
+    let subject = prompt("Skriv in vilket ämne: ");
+    let subjectDiv = document.createElement("div");
+    subjectDiv.classList.add("subject");
+    let subjectName = document.createElement("a");
+    subjectName.classList.add("subject-name");
+    subjectName.innerText = subject;
+    subjectDiv.append(subjectName);
+    approot.append(subjectDiv);
+}
 
 
 
+    
 
 function buttonSlide(){
     

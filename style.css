@@ -9,7 +9,7 @@ body {
 }
 .app-root{
     width: 100%;
-    height: 100rem;
+    height: 20%;
     display: flex;
     flex-direction:row ;
     flex-wrap: wrap;
@@ -18,19 +18,6 @@ body {
 }
 
 
-
-.class-button{
-    margin-top: 0%;
-    margin-left: 6rem;
-    height: 10rem;
-    width: 10rem;
-    border: none;
-    background: turquoise;
-    border-radius: 30px 30px ;
-}
-.class-button:hover{
-    background-color: rgba(255, 255, 255, 0);
-}
 
 #class-button{
     position: absolute;
@@ -47,4 +34,35 @@ body {
 
 .slider{
     transform: translateY(0rem);
+}
+
+#addsubject{
+    height: 30%;
+    width: 5%;
+    border-radius: 10px 10px;
+    border: none;
+    margin-top : 2.5%;
+    margin-left: 2%;
+
+}
+#addsubject:hover{
+    background-color: black;
+   
+    
+}
+
+.subject{
+    background-color: green;
+    height: 50%;
+    max-width: 10%;
+    border-radius: 20px 20px;
+    margin-left:5% ;
+    margin-top:2.5%;
+    
+    transition: all ease-out 0.5s;
+}
+.subject:hover{
+    transform: scaleX(2);
+    width: 5%;
+    height: 55%;
 }
