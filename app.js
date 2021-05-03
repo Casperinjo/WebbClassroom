@@ -1,6 +1,7 @@
 let approot = document.querySelector(".app-root");
 let subject;
 let subjectObjects = [];
+let subjectButton;
 
 
 //Event listerners
@@ -31,60 +32,76 @@ fetch("./classroom.json", {})
 
 
 //Eventlisteners
-subjectButton = addEventListener("click", checkSubject);
 
 
-function checkSubject(e) {
-    let target = e.target.children;
-    for(i = 0; i < subjectObjects.length; i++){
-        if(subjectObjects[i].GetSubjectName() === target){
-            subjectObjects[i].GoToSubject();
-        }
-    }
-}
+
 
 
 class subjects{
+    
     constructor(subject){
+        
         this.subject = subject;
     }
     GetSubjectName(){
-        return subject;
+        
+        return this.subject;
     }
-
-
-
+    
+    
+    
     GoToSubject(){
-        approot.classList.addSubject("invisible");
+        console.log("hje");
+        approot.classList.toggle("invisible");
         subjectContainer.classList.toggle("invisible");
-                
+        
     }
-
+    
 }
+
+
 
 
 
 
 function addSubject() {
-  let subjectName = prompt("Skriv in vilket ämne: ");
-  let subjectButton = document.createElement("subject");
-  subjectButton.classList.add("subject");
-  let subjectHeader = document.createElement("h3");
-  subjectHeader.classList.add("subject-header");
-  subjectHeader.innerText = subjectName;
-  subjectButton.append(subjectHeader);
-  approot.append(subjectButton);
-
-    let subjectContainer = document.createElement("div");
-    subjectContainer.classList.add("subject.container")
-    subjectContainer.classList.toggle("invisible");
-    //subjectContainer.append(subjectPage);
-    subjectObjects.Push = new subjects(subjectName);
+    let subjectName = prompt("Skriv in vilket ämne: ");
+    subjectButton = document.createElement("button");
+    subjectButton.classList.add("subject");
+    let subjectHeader = document.createElement("h3");
+    subjectHeader.classList.add("subject-header");
+    subjectHeader.innerText = subjectName;
+    subjectButton.append(subjectHeader);
+    approot.append(subjectButton);
+    
     
     
 
 
+    subjectObjects.push(new subjects(subjectName));
+    
+    subjectButton.addEventListener("click", checkSubject);
 }
+
+
+function checkSubject(e) {
+  
+    
+    let target = e.target;
+    
+    
+    
+    for(let i = 0; i < subjectObjects.length; i++){
+        
+        if(subjectObjects[i].GetSubjectName() == target.lastChild.innerText){
+            
+            
+            subjectObjects[i].GoToSubject();
+        }
+    }
+    
+}
+
 
 
 
