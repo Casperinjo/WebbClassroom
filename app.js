@@ -24,12 +24,12 @@ class subjects {
     return this.subject;
   }
 
-  GoToSubject() {
+    § §§§11111GoToSubject() {
     
-    approot.classList.add("app-root-trans");
+    approot.classList.toggle("app-root-trans");
       approot.addEventListener("transitionend" , function(){
-        subjectContainer.classList.add("subject-slider");
-        approot.classList.add("invisible");
+        subjectContainer.classList.toggle("subject-slider");
+        approot.classList.toggle("invisible");
        
       })    
 
@@ -37,6 +37,8 @@ class subjects {
       
     
   }
+  
+  
 }
 
 class documents {
@@ -46,7 +48,7 @@ class documents {
   GetDocName() {
     return this.name;
   }
-  GoToDoc(doc) {
+  GoToDoc() {
     document.querySelector(".document").classList.add("scaler");
     subjectContainer.classList.add("subject-container-trans");
     subjectContainer.addEventListener("transitionend" , function(){
@@ -108,3 +110,20 @@ function checkDoc(e) {
     }
   }
 }
+
+function Approot(){
+
+  subjectContainer.classList.toggle("subject-slider");
+  subjectContainer.addEventListener("transitionend", function(){
+    subjectContainer.classList.toggle("invisible");
+    approot.classList.toggle("invisible");
+  })
+ 
+
+  
+}
+
+  
+  
+  
+

@@ -87,8 +87,20 @@ body {
 transform: translateX(0rem);
 }
 .subject-container-trans{
-  opacity: 0;
+  opacity: 0.5;
 }
+.back-approot{
+  height: 5%;
+  width: 2.5%;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  transition: all 1s;
+}
+.back-approot:hover{
+  transform: scale(1.2);
+}
+
 
 #add-doc{
   width: 2.75%;
@@ -128,6 +140,7 @@ transform: translateX(0rem);
     transform: scale(1.0);
   }
   100%{
+    
     transform: scale(20);
   }
 }
